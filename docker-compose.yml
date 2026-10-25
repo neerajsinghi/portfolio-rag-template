@@ -1,0 +1,36 @@
+# Local stack: Go agent backend on :8080 and Next.js frontend on :3000.
+#   cp backend/.env.example backend/.env   # add your LLM API key
+#   docker compose up --build
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - path: ./backend/.env
+        required: false
+    environment:
+      - PORT=8080
+      - CORPUS_DIR=/app/corpus
+      - ALLOWED_ORIGIN=http://localhost:3000
+    volumes:
+      # Edit backend/corpus/ and `docker compose restart backend` — no rebuild needed.
+      - ./backend/corpus:/app/corpus:ro
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/api/v1/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # The browser calls the backend directly, so this is the host-visible URL.
+        NEXT_PUBLIC_API_BASE: http://localhost:8080
+        NEXT_PUBLIC_SITE_URL: http://localhost:3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

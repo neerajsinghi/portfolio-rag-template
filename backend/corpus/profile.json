@@ -1,0 +1,47 @@
+{
+  "_comment": "PLACEHOLDER persona. Replace every value with your own. Used by the agent's structured tools (get_links, get_skills, list_projects, get_experience_summary). Free-form knowledge goes in the *.md files next to this one.",
+  "name": "Alex Doe",
+  "headline": "Senior Software Engineer (placeholder persona)",
+  "location": "Springfield, Example Country",
+  "availability": "Open to Senior / Staff engineering roles and remote work",
+  "email": "alex@example.com",
+  "links": [
+    { "label": "Website", "url": "https://example.com" },
+    { "label": "GitHub", "url": "https://github.com/your-username" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/your-handle" }
+  ],
+  "skills": {
+    "Languages": ["Go", "TypeScript", "Python"],
+    "Backend": ["REST", "gRPC", "Microservices", "PostgreSQL", "Redis"],
+    "Cloud & Infra": ["Docker", "Kubernetes", "Terraform", "CI/CD"],
+    "AI / LLM": ["RAG", "Tool-use agents", "Prompt design"]
+  },
+  "projects": [
+    {
+      "name": "Example Project One",
+      "description": "Placeholder: a short description of a project you are proud of and the impact it had.",
+      "stack": ["Go", "PostgreSQL", "Docker"],
+      "url": "https://github.com/your-username/example-project-one"
+    },
+    {
+      "name": "Portfolio Agent (this site)",
+      "description": "A portfolio with an AI agent that answers questions about me using RAG over a document corpus and a tool-use loop.",
+      "stack": ["Go", "Next.js", "RAG", "SSE"],
+      "url": "https://github.com/your-username/portfolio-rag-template"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "Example Corp",
+      "period": "2022 – Present",
+      "summary": "Placeholder: leads the platform team; designs and ships backend services."
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Sample Startup Inc.",
+      "period": "2018 – 2022",
+      "summary": "Placeholder: built APIs and data pipelines from prototype to production."
+    }
+  ]
+}
